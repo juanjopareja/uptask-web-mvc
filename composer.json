@@ -1,0 +1,18 @@
+{
+    "name": "jupg2/up-task_mvc",
+    "description": "UpTask App",
+    "type": "project",
+    "authors": [
+        {
+            "name": "juanjopareja",
+            "email": "jupg25@msn.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models"
+        }
+    }
+}
