@@ -1,0 +1,24 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.form {
+    margin-top: 5rem;
+
+    .field {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        label {
+            flex: 0 0 10rem;
+        }
+    
+        input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            background-color: lighten(var.$grey, 40%);
+        }
+    }
+
+}
