@@ -1,7 +1,7 @@
 @use 'base/variables' as var;
 @use 'base/mixins' as mix;
 
-.create {
+.login {
     margin-top: 5rem;
 
     .uptask {
@@ -13,6 +13,16 @@
 
         @include mix.tablet { 
             font-size: 10rem;
+        }
+    }
+
+    input[type="submit"] {
+        @include mix.button(var.$cyan, var.$white);
+    }
+
+    .actions {
+        a {
+            color: var.$cyan;
         }
     }
 }
