@@ -1,0 +1,18 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.create {
+    margin-top: 5rem;
+
+    .uptask {
+        background: linear-gradient(to right, var.$cyan 0%, lighten(var.$cyan, 30%) 100%);
+        color: transparent;
+        background-clip: text;
+        font-size: 7rem;
+        text-align: center;
+
+        @include mix.tablet { 
+            font-size: 10rem;
+        }
+    }
+}
