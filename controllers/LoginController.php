@@ -28,12 +28,14 @@ class LoginController {
         ]);
     }
 
-    public static function forget() {
-        echo "Desde olvidé...";
-    
+    public static function forget(Router $router) {  
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         }
+
+        $router->render('auth/forget', [
+            'title' => 'Recuperar Contraseña'
+        ]);
     }
     
     public static function restore() {
