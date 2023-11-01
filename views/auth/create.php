@@ -7,7 +7,7 @@
         <form action="/" method="POST" class="form">
             <div class="field">
                 <label for="name">Nombre</label>
-                <input type="text" id="name" placeholder="Tú Nombre" name="nombre">
+                <input type="text" id="name" placeholder="Tú Nombre" name="name">
             </div>
 
             <div class="field">
@@ -25,7 +25,7 @@
                 <input type="password" id="passwordRepeat" placeholder="Repite tu Password" name="passwordRepeat">
             </div>
 
-            <input type="submit" class="button" value="Iniciar Sesión">
+            <input type="submit" class="button" value="Crear Cuenta">
         </form>
 
         <div class="actions">

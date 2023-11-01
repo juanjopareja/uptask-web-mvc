@@ -1,15 +1,15 @@
 @use 'base/variables' as var;
 @use 'base/mixins' as mix;
 
-.login {
+.create {
     margin-top: 5rem;
 
     .uptask {
-        @include mix.gradientText(var.$cyan);
+        @include mix.gradientText(var.$purple);
     }
 
     input[type="submit"] {
-        @include mix.button(var.$cyan, var.$white);
+        @include mix.button(var.$purple, var.$white);
     }
 
     .actions {
