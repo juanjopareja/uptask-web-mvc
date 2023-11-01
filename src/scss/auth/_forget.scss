@@ -1,0 +1,20 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.forget {
+    margin-top: 5rem;
+
+    .uptask {
+        @include mix.gradientText(var.$pink);
+    }
+
+    input[type="submit"] {
+        @include mix.button(var.$pink, var.$white);
+    }
+
+    .actions {
+        a {
+            color: var.$pink;
+        }
+    }
+}
