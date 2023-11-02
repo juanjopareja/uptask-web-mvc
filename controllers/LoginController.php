@@ -38,12 +38,14 @@ class LoginController {
         ]);
     }
     
-    public static function restore() {
-        echo "Desde restaurar contraseña...";
-    
+    public static function restore(Router $router) {    
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         }
+
+        $router->render('auth/restore', [
+            'title' => 'Restaurar Contraseña'
+        ]);
     }
 
     public static function message() {
