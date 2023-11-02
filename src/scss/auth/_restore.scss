@@ -1,20 +1,20 @@
 @use 'base/variables' as var;
 @use 'base/mixins' as mix;
 
-.create {
+.restore {
     margin-top: 5rem;
 
     .uptask {
-        @include mix.gradientText(var.$purple);
+        @include mix.gradientText(var.$blue);
     }
 
     input[type="submit"] {
-        @include mix.button(var.$purple, var.$white);
+        @include mix.button(var.$blue, var.$white);
     }
 
     .actions {
         a {
-            color: var.$purple;
+            color: var.$blue;
         }
     }
 }
