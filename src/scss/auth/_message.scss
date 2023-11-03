@@ -1,0 +1,10 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.message {
+    margin-top: 5rem;
+
+    .uptask {
+        @include mix.gradientText(var.$orange);
+    }
+}
