@@ -1,0 +1,18 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.confirm {
+    margin-top: 5rem;
+
+    .uptask {
+        @include mix.gradientText(var.$indigo);
+    }
+
+    .actions {
+        justify-content: center;
+
+        a {
+            color: var.$indigo;
+        }
+    }
+}
