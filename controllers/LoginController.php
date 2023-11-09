@@ -1,6 +1,8 @@
 <?php
 
 namespace Controllers;
+
+use Model\User;
 use MVC\Router;
 
 class LoginController {
@@ -19,12 +21,19 @@ class LoginController {
     }
 
     public static function create(Router $router) {
+        $user = new User();
+
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+            $user->synchro($_POST);
+
+            $alerts = $user->validateNewAccount();
+
+            debug($alerts);
         }
 
         $router->render('auth/create', [
-            'title' => 'Crea tu cuenta en UpTask'
+            'title' => 'Crea tu cuenta en UpTask',
+            'user' => $user
         ]);
     }
 

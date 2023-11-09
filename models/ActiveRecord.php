@@ -161,8 +161,6 @@ class ActiveRecord {
         return $object;
     }
 
-
-
     // Identify and DB attribute unification
     public function attributes() {
         $attributes = [];
