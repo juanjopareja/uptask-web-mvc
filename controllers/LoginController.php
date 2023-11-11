@@ -21,19 +21,18 @@ class LoginController {
     }
 
     public static function create(Router $router) {
+        $alerts = [];
         $user = new User();
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user->synchro($_POST);
-
             $alerts = $user->validateNewAccount();
-
-            debug($alerts);
         }
 
         $router->render('auth/create', [
             'title' => 'Crea tu cuenta en UpTask',
-            'user' => $user
+            'user' => $user,
+            'alerts' => $alerts
         ]);
     }
 
