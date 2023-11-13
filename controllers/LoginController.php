@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Classes\Email;
 use Model\User;
 use MVC\Router;
 
@@ -40,6 +41,9 @@ class LoginController {
                     $user->createToken();
 
                     $result = $user->save();
+
+                    $email = new Email($user->email, $user->name, $user->token);
+                    $email->sendConfirmation();
                     if($result) {
                         header('Location: /message');
                     }
