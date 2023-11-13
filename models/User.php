@@ -14,7 +14,7 @@ class User extends ActiveRecord {
         $this->password = $args['password'] ?? '';
         $this->passwordRepeat = $args['passwordRepeat'] ?? '';
         $this->token = $args['token'] ?? '';
-        $this->confirmed = $args['confirmed'] ?? '';
+        $this->confirmed = $args['confirmed'] ?? 0;
     }
 
     public function validateNewAccount() {
@@ -39,5 +39,13 @@ class User extends ActiveRecord {
         }
 
         return self::$alerts;
+    }
+
+    public function hashPassword() {
+        $this->password = password_hash($this->password, PASSWORD_BCRYPT);
+    }
+
+    public function createToken() {
+        $this->token = uniqid();
     }
 }
