@@ -13,4 +13,10 @@
         border-left: .5rem solid var.$red;
         color: var.$red;
     }
+    
+    &.success {
+        background-color: lighten(var.$green, 60%);
+        border-left: .5rem solid var.$green;
+        color: var.$green;
+    }
 }
