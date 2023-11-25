@@ -4,6 +4,8 @@
     <div class="container-sm">
         <p class="description-page">Recupera tu acceso a UpTask</p>
 
+        <?php include_once __DIR__ . '/../templates/alerts.php'; ?>
+
         <form action="/forget" method="POST" class="form">
             <div class="field">
                 <label for="email">Email</label>

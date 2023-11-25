@@ -59,12 +59,20 @@ class LoginController {
     }
 
     public static function forget(Router $router) {  
+        $alerts = [];
+
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+            $user = new User($_POST);
+            $alerts = $user->validateEmail();
+
+            if(empty($alerts)) {
+                
+            }
         }
 
         $router->render('auth/forget', [
-            'title' => 'Recuperar Contraseña'
+            'title' => 'Recuperar Contraseña',
+            'alerts' => $alerts
         ]);
     }
     
