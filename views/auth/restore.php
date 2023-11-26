@@ -3,15 +3,20 @@
     
     <div class="container-sm">
         <p class="description-page">Restablece tu contraseña</p>
+        <?php include_once __DIR__ . '/../templates/alerts.php'; ?>
 
-        <form action="/restore" method="POST" class="form">
-            <div class="field">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Tú Password" name="password">
-            </div>
+        <?php if($showForm) { ?>
 
-            <input type="submit" class="button" value="Guardar Contraseña">
-        </form>
+            <form action="/restore" method="POST" class="form">
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Tú Password" name="password">
+                </div>
+
+                <input type="submit" class="button" value="Guardar Contraseña">
+            </form>
+
+        <?php } ?>
 
         <div class="actions">
             <a href="/create">¿Aún no tienes una cuenta? Obtener Una</a>

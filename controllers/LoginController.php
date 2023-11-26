@@ -90,13 +90,28 @@ class LoginController {
         ]);
     }
     
-    public static function restore(Router $router) {    
+    public static function restore(Router $router) {  
+        $token = s($_GET['token']);
+        $showForm = true;
+
+        if(!$token) header('Location: /');
+
+        $user = User::where('token', $token);
+        if(empty($user)) {
+            User::setAlert('error', 'Token no válido');
+            $showForm = false;
+        }
+        
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         }
 
+        $alerts = User::getAlerts();
+
         $router->render('auth/restore', [
-            'title' => 'Restaurar Contraseña'
+            'title' => 'Restaurar Contraseña',
+            'alerts' => $alerts,
+            'showForm' => $showForm
         ]);
     }
 
