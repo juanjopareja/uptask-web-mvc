@@ -107,7 +107,13 @@ class LoginController {
             $alerts = $user->validatePassword();
 
             if(empty($alerts)) {
-                
+                $user->hashPassword();
+                $user->token = null;
+                $result = $user->save();
+
+                if($result) {
+                    header('Location: /');
+                }
             }
         }
 
