@@ -71,6 +71,8 @@ class LoginController {
                 if($user && $user->confirmed) {
                     $user->createToken();
                     $user->save();
+                    $email = new Email($user->email, $user->name, $user->token);
+                    $email->sendInstructions();
 
                     User::setAlert('success', 'Hemos enviado las instrucciones a tu email');
 
