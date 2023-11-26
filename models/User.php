@@ -55,6 +55,18 @@ class User extends ActiveRecord {
         return self::$alerts;
     }
 
+    public function validatePassword() {
+        if(!$this->password) {
+            self::$alerts['error'][] = 'El password del usuario es obligatorio';
+        }
+
+        if(strlen($this->password) < 6) {
+            self::$alerts['error'][] = 'El password debe contener al menos 6 caracteres';
+        }
+
+        return self::$alerts;
+    }
+
     public function hashPassword() {
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
     }

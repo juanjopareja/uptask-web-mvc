@@ -7,7 +7,7 @@
 
         <?php if($showForm) { ?>
 
-            <form action="/restore" method="POST" class="form">
+            <form class="form" method="POST">
                 <div class="field">
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Tú Password" name="password">

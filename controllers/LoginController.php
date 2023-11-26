@@ -103,7 +103,12 @@ class LoginController {
         }
         
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+            $user->synchro($_POST);
+            $alerts = $user->validatePassword();
+
+            if(empty($alerts)) {
+                
+            }
         }
 
         $alerts = User::getAlerts();
