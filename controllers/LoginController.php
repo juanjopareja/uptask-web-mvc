@@ -11,10 +11,22 @@ class LoginController {
         $alerts = [];
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $authentication = new User($_POST);
+            $user = new User($_POST);
 
-            $alerts = $authentication->validateLogin();
+            $alerts = $user->validateLogin();
+
+            if(empty($alerts)) {
+                $user = User::where('email', $user->email);
+
+                if(!$user || !$user->confirmed) {
+                    User::setAlert('error', 'El usuario no existe o no está confirmado');
+                } else {
+                    
+                }
+            }
         }
+
+        $alerts = User::getAlerts();
 
         $router->render('auth/login', [
             'title' => 'Iniciar Sesión',
