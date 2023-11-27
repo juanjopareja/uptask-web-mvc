@@ -21,7 +21,17 @@ class LoginController {
                 if(!$user || !$user->confirmed) {
                     User::setAlert('error', 'El usuario no existe o no está confirmado');
                 } else {
-                    
+                    if(password_verify($_POST['password'], $user->password)) {
+                        session_start();
+                        $_SESSION['id'] = $user->id;
+                        $_SESSION['name'] = $user->name;
+                        $_SESSION['email'] = $user->email;
+                        $_SESSION['login'] = true;
+
+                        header('Location: /projects');
+                    } else {
+                        User::setAlert('error', 'Contraseña incorrecta');
+                    }
                 }
             }
         }
