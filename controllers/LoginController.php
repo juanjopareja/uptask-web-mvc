@@ -8,12 +8,17 @@ use MVC\Router;
 
 class LoginController {
     public static function login(Router $router) {
-        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $alerts = [];
 
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $authentication = new User($_POST);
+
+            $alerts = $authentication->validateLogin();
         }
 
         $router->render('auth/login', [
-            'title' => 'Iniciar Sesión'
+            'title' => 'Iniciar Sesión',
+            'alerts' => $alerts
         ]);
     }
     

@@ -3,6 +3,7 @@
     
     <div class="container-sm">
         <p class="description-page">Iniciar Sesión</p>
+        <?php include_once __DIR__ . '/../templates/alerts.php'; ?>
 
         <form action="/" method="POST" class="form">
             <div class="field">
