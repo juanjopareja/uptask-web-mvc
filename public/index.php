@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use Controllers\LoginController;
+use Controllers\DashboardController;
 use MVC\Router;
 $router = new Router();
 
@@ -27,5 +28,7 @@ $router->post('/restore', [LoginController::class, 'restore']);
 $router->get('/message', [LoginController::class, 'message']);
 $router->get('/confirm', [LoginController::class, 'confirm']);
 
+// Projects Zone
+$router->get('/dashboard', [DashboardController::class, 'index']);
 
 $router->checkRoutes();

@@ -28,7 +28,7 @@ class LoginController {
                         $_SESSION['email'] = $user->email;
                         $_SESSION['login'] = true;
 
-                        header('Location: /projects');
+                        header('Location: /dashboard');
                     } else {
                         User::setAlert('error', 'Contraseña incorrecta');
                     }
