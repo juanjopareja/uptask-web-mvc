@@ -1,0 +1,11 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.dashboard {
+    background-color: var.$lightGrey;
+
+    @include mix.tablet { 
+        display: flex;
+        height: 100vh;
+    }
+}
